@@ -1,0 +1,47 @@
+﻿@model List<Aula>
+
+@{
+    DateTime dataHora = ViewBag.DataHora;
+}
+    <center>
+        <h2>Gerenciamento de Aulas</h2>
+    </center>
+<br /><br />
+<a asp-action="Cadastrar" class="btn btn-info">Cadastrar Aula</a>
+<table class="table table-hover table-striped"
+       style="margin-top:15px;margin-bottom:15px">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Local</th>
+            <th>Dia</th>
+            <th>Vagas</th>
+            <th>Professor</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Aula item in Model)
+        {
+            <tr>
+                <td>@item.Tipo</td>
+                <td>@item.Local</td>
+
+                <td>@item.Data</td>
+                <td>@item.Vagas</td>
+
+                <td>@item.Professor.Nome</td>
+                <td>
+                    <a asp-action="Remover"
+                       asp-route-id="@item.IdAula"
+                       class="btn btn-danger">
+                        Remover
+                    </a>
+                </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+<b>Dados atualizados em: </b> @dataHora

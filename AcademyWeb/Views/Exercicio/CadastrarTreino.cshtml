@@ -1,0 +1,58 @@
+﻿@model Treino
+
+@{
+    
+}
+    <center>
+        <h2>Cadastro de Treino</h2>
+    </center>
+<br /><br />
+    <form asp-action="CadastrarTreino" method="post"
+          enctype="multipart/form-data">
+        <fieldset>
+            <legend>Treino</legend>
+            <div asp-validation-summary="ModelOnly"
+                 class="text-primary"></div>
+
+            <div class="form-group" id="Periodo">
+                <label asp-for="Periodo"></label>
+                <input type="date" class="form-control"
+                       asp-for="Periodo" />
+                <span asp-validation-for="Periodo"
+                      class="text-primary"></span>
+            </div>
+
+            <div class="form-group" id="Professores">
+                <label>Professores</label>
+                <select asp-items="@ViewBag.Professores"
+                        class="form-control"
+                        name="drpProfessores">
+                    <option> -- SELECIONE -- </option>
+                </select>
+            </div>
+
+            <div class="form-group" id="Alunos">
+                <label>Alunos</label>
+                <select asp-items="@ViewBag.Alunos"
+                        class="form-control"
+                        name="drpAlunos">
+                    <option> -- SELECIONE -- </option>
+                </select>
+            </div>
+            <div class="form-group" id="Lista">
+                <label>Lista Exercicios</label>
+                <select asp-items="@ViewBag.Lista"
+                        class="form-control"
+                        name="drpLista">
+                    <option> -- SELECIONE -- </option>
+                </select>
+            </div>
+
+            <div>
+                <input type="submit" class="btn btn-success" value="Cadastrar" />
+                <br><br />
+
+            </div>
+
+        </fieldset>
+    </form>

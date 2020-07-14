@@ -1,0 +1,39 @@
+﻿@model List<Exercicio>
+
+@{
+
+}
+
+<center>Lista Exercicios</center>
+<br /><br />
+@foreach (Exercicio item in Model)
+{<center>
+    <h2>@item.ListaTreino.NomeLista</h2>
+    <h4>@item.ListaTreino.DSemana</h4>
+</center>
+}
+    <table class="table table-hover table-striped"
+           style="margin-top:15px;margin-bottom:15px">
+        <thead>
+            <tr>
+                <th>Equipamento</th>
+                <th>Quantidade</th>
+                <th>Repetições</th>
+
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Exercicio exercicio in Model)
+            {
+                <tr>
+                    <td>@exercicio.Equipamento</td>
+                    <td>@exercicio.Quantidade</td>
+
+                    <td>@exercicio.Repeticoes</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="https://localhost:44312/Exercicio/" type="button" class="btn btn-outline-success btn-lg btn-block">Visualizar Aula</a>

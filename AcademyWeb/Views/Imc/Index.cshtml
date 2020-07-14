@@ -1,0 +1,58 @@
+﻿@model List<IMCAlunos>
+
+@{
+
+}
+<center><h2>Avaliação Aluno</h2></center>
+<br /><br />
+<form asp-action="Index" method="post"
+      enctype="multipart/form-data">
+    <fieldset>
+        <div class="form-group" id="Alunos">
+            <label>Alunos</label>
+            <select asp-items="@ViewBag.Alunos"
+                    class="form-control"
+                    name="drpAlunos">
+                <option> -- SELECIONE -- </option>
+            </select>
+        </div>
+        <input type="submit"
+               class="btn btn-success"
+               value="Buscar Aluno" />
+    </fieldset>
+</form>
+
+<h2>IMC ALUNO</h2>
+@if (ViewBag.Validar == 1)
+{
+    <table class="table table-hover table-striped"
+           style="margin-top:15px;margin-bottom:15px">
+        <thead>
+            <tr>
+                <th>Peso</th>
+                <th>Altura</th>
+                <th>Imc</th>
+                <th>Data/Horario</th>
+                
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (IMCAlunos item in Model)
+            {
+                <tr>
+                    <td>@item.Peso</td>
+                    <td>@item.Altura</td>
+                    <td>@item.CalcImc</td>
+                    <td>@item.CriadoEm</td>
+
+
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<center><a asp-action="Cadastrar" class="btn btn-info">Cadastrar Imc Aluno</a></center>

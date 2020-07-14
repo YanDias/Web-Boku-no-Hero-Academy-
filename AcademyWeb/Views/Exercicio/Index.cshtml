@@ -1,0 +1,67 @@
+﻿@model List<Treino>
+
+@{
+    int v = 0;
+    
+}
+    <center>
+        <h1>Vizualizar Treinos</h1>
+    </center>
+<br /><br />
+    <form asp-action="Index" method="post"
+      enctype="multipart/form-data">
+
+        <div class="form-group" id="Aluno">
+            <label>Aluno</label>
+            <select asp-items="@ViewBag.Busca"
+                    class="form-control"
+                    name="drpAlunos">
+                <option> -- SELECIONE -- </option>
+            </select>
+        </div>
+
+        <input type="submit"
+               class="btn btn-success"
+               value="Selecionar" />
+
+    </form>
+    
+
+@if(ViewBag.Validar != null) { 
+<table class="table table-hover table-striped"
+       style="margin-top:15px;margin-bottom:15px">
+    <thead>
+        <tr>
+            <th>Nome Treino</th>
+            <th>Dia Semana</th>
+            <th>Professor</th>
+            <th>Aluno</th>
+            <th>Treino Valido Até</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Treino item in Model)
+        { 
+            <tr>
+                <td>@item.ListaTreino.NomeLista</td>
+                <td>@item.ListaTreino.DSemana</td>
+
+                <td>@item.Professor.Nome</td>
+                <td>@item.Aluno.Nome</td>
+
+                <td>@item.Periodo</td>
+                
+               <td> 
+                    <a asp-action="idLista"
+                    asp-route-id="@item.ListaTreino.IdListaTreino"
+                    class="btn btn-success">
+                    Exercicio
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}

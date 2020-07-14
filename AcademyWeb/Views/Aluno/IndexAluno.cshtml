@@ -1,0 +1,51 @@
+﻿@model List<Avisos>
+
+@{
+    DateTime dataHora = ViewBag.DataHora;
+}
+
+
+
+
+
+
+
+<center>
+    <h1><b>Bem Vindo Aluno</b></h1>
+    <img src="~/Academyimagens/midomido.gif" alt="some text" width=500 height=350 style=" border: 10px solid #2e7d32">
+</center>
+<br>
+<a href="https://localhost:44312/Exercicio/Index" type="button" class="btn btn-success btn-lg btn-block">Visualizar Treino</a>
+<a href="ViewAula" type="button" class="btn btn-outline-success btn-lg btn-block">Visualizar Aula</a>
+<a href="EditarPerfil" type="button" class="btn btn-light btn-lg btn-block">Alterar meu Perfil</a>
+
+<br>
+<br />
+<br>
+<br />
+<br>
+<br />
+<center><h4>Avisos Gerais</h4></center>
+<table class="table table-hover table-striped"
+       style="margin-top:10px;margin-bottom:10px">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Descrição</th>
+            <th>Criado em:</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Avisos item in Model)
+        {
+            <tr>
+                <td>@item.Tipo</td>
+                <td>@item.Descricao</td>
+                <td>@item.CriadoEm</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+

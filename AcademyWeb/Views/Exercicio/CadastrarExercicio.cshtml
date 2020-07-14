@@ -1,0 +1,57 @@
+﻿@model Exercicio
+
+@{
+    
+}
+<center><h2>Cadastrar Exercicios</h2></center>
+<br /><br />
+    <form asp-action="CadastrarExercicio" method="post"
+          enctype="multipart/form-data">
+        <fieldset>
+            <legend>Exercicios</legend>
+            <div asp-validation-summary="ModelOnly"
+                 class="text-primary"></div>
+            <div class="form-group" id="Equipamento">
+                <label asp-for="Equipamento"></label>
+                <input type="text" class="form-control"
+                       asp-for="Equipamento" />
+                <span asp-validation-for="Equipamento"
+                      class="text-primary"></span>
+            </div>
+            <div class="form-group" id="Quantidade">
+                <label asp-for="Quantidade"></label>
+                <input type="text" class="form-control"
+                       asp-for="Quantidade" />
+                <span asp-validation-for="Quantidade"
+                      class="text-primary"></span>
+            </div>
+
+            <div class="form-group" id="Repeticoes">
+                <label asp-for="Repeticoes"></label>
+                <input type="text" class="form-control"
+                       asp-for="Repeticoes" />
+                <span asp-validation-for="Repeticoes"
+                      class="text-primary"></span>
+            </div>
+
+
+            <div class="form-group" id="Lista">
+                <label>Lista de Exercicios</label>
+                <select asp-items="@ViewBag.Lista"
+                        class="form-control"
+                        name="drpLista">
+                    <option> -- SELECIONE -- </option>
+                </select>
+            </div>
+            
+                <div>
+                    <input type="submit" class="btn btn-success" value="Adicionar Exercicio" />
+                <br ><br />
+                
+            </div>
+            
+        </fieldset>
+    </form>
+    <a asp-action="CadastrarTreino" class="btn btn-danger">
+        Vincular Treino
+    </a>

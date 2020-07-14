@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    @* Barra de navegação *@
+    <nav class="navbar navbar-light" style="background-color: #2e7d32;">
+        <a class="navbar-brand" href="https://localhost:44312/">
+
+            <img src="~/Academyimagens/midorya.png.png" width="65" height="65" class="d-inline-block align-content-center" alt="">
+            <b>                       Bokuno Hero Academy                                </b>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Destaques</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Preços</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Link dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Ação</a>
+                        <a class="dropdown-item" href="#">Outra ação</a>
+                        <a class="dropdown-item" href="#">Algo mais aqui</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    @* Conteúdo *@
+    <div class="m-5">
+        @RenderBody()
+    </div>
+    @* Rodapé *@
+    <footer>
+        <hr />
+        <p style="text-align:center">
+            &copy; @DateTime.Now.Year -
+            Desenvolvido por Yan Dias e Lucas Choinatzki
+        </p>
+    </footer>
+</body>
+</html>

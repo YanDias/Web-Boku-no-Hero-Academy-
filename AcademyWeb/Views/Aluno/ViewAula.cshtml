@@ -1,0 +1,53 @@
+﻿@model List<Aula>
+
+@{
+    DateTime dataHora = ViewBag.DataHora;
+}
+
+
+
+    <center>
+        <h2>Todas as Aulas</h2>
+    <br /><br />
+        <table class="table table-hover table-striped"
+               style="margin-top:15px;margin-bottom:15px">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Local</th>
+                    <th>Horaio</th>
+                    <th>Vagas</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Aula item in Model)
+                {
+                    <tr>
+                        <td>@item.Tipo</td>
+                        <td>@item.Local</td>
+
+                        <td>@item.Data</td>
+                        <td>@item.Vagas</td>
+
+                        @if (item.Vagas > 0)
+                        {
+                            <td>
+                                <a asp-action="AlterarAula"
+                                   asp-route-id="@item.IdAula"
+                                   class="btn btn-danger">
+                                    Reservar Vaga
+                                </a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td><a class="btn btn-primary"><b>Esgotado</b></a></td>
+                        }
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </center><b>Dados atualizados em: </b> @dataHora

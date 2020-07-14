@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20191201183343_Banco.cs" />
+    <Compile Remove="Migrations\20191201183343_Banco.Designer.cs" />
+    <Compile Remove="Migrations\20191201184102_CriarBanco.cs" />
+    <Compile Remove="Migrations\20191201184102_CriarBanco.Designer.cs" />
+    <Compile Remove="Migrations\20191201184420_CriarBanco.cs" />
+    <Compile Remove="Migrations\20191201184420_CriarBanco.Designer.cs" />
+    <Compile Remove="Migrations\20191201203013_CriarBanco.cs" />
+    <Compile Remove="Migrations\20191201203013_CriarBanco.Designer.cs" />
+    <Compile Remove="Migrations\20191202192110_BancoConfig.cs" />
+    <Compile Remove="Migrations\20191202192110_BancoConfig.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+</Project>

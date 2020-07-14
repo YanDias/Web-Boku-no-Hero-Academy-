@@ -1,0 +1,43 @@
+﻿@model List<Professor>
+
+@{
+    DateTime dataHora = ViewBag.DataHora;
+    
+}
+
+<h2>Gerenciamento de Professor</h2>
+<br /><br />
+<a asp-action="Cadastrar" class="btn btn-info">Cadastrar Professor</a>
+<table class="table table-hover table-striped"
+       style="margin-top:15px;margin-bottom:15px">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Imagem</th>
+            <th>Especialidade</th>
+            <th>Criado em</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Professor item in Model)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.Cpf</td>
+
+                <td>
+                    <img src="~/Academyimagens/@item.Imagem"
+                         alt="@item.Nome"
+                         style="width:150px;height:120px" />
+                </td>
+                <td>@item.Especialidade</td>
+
+                <td>@item.CriadoEm</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+<b>Dados atualizados em: </b> @dataHora

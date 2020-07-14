@@ -1,0 +1,51 @@
+﻿@model List<Avisos>
+
+@{
+    
+}
+
+<h2>Gerenciamento de Avisos</h2>
+<br /><br />
+<a asp-action="Cadastrar" class="btn btn-info">Cadastrar Aviso</a>
+<table class="table table-hover table-striped"
+       style="margin-top:15px;margin-bottom:15px">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Descrição</th>
+            <th>Criado em:</th>
+            <th></th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Avisos item in Model)
+        {
+        <tr>
+            <td>@item.Tipo</td>
+            <td>@item.Descricao</td>
+            <td>@item.CriadoEm</td>
+
+            <td>
+                <a asp-action="Alterar"
+                   asp-route-id="@item.IdAviso"
+                   class="btn btn-success">
+                    Alterar
+                </a>
+            </td>
+
+            <td>
+                <a asp-action="Remover"
+                   asp-route-id="@item.IdAviso"
+                   class="btn btn-danger">
+                    Remover
+                </a>
+            </td>
+
+
+
+        </tr>
+        }
+    </tbody>
+</table>

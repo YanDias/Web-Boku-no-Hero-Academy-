@@ -1,0 +1,86 @@
+﻿<html>
+<head>
+    <title>My Map</title>
+    <style>
+        #mapa {
+            : center;
+            height: 350px;
+            width: 350px;
+        }
+    </style>
+</head>
+<div class="card-deck">
+    <div class="card">
+        <img src="" class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">Nossa Missão</h5>
+            <p class="card-text">Buscar a excelência em serviços, através de um ambiente agradável, oferecendo profissionais felizes, que proporcionam aos alunos bem-estar físico e mental.</p>
+            <p class="card-text"><small class="text-muted">Bokuno Hero Academy</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Visão</h5>
+            <p class="card-text">Ser referência em diversidade de atividades físicas e capaz de superar as expectativas de nossos alunos, através de experiências fantásticas e com alto padrão de atendimento.</p>
+            <p class="card-text"><small class="text-muted">Bokuno Hero Academy</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="" class="card" alt="">
+        <div class="card-body">
+            <h5 class="card-title">Valores</h5>
+            <p class="card-text">
+                Compromisso e ética na prestação de serviços,Excelência no atendimento, Oferecer preço justo pelo serviço prestado, Preocupação com a saúde, bem-estar e qualidade de vida de nossos alunos, Desenvolver estratégias para capacitação contínua dos nossos profissionais.
+            </p>
+            <p class="card-text"><small class="text-muted">Bokuno Hero Academy</small></p>
+        </div>
+    </div>
+</div>
+<body>
+    <br />
+    <br />
+    <br />
+    <div class="card-deck">
+        <div class="card">
+            <img src="" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">Sobre Nós</h5>
+                <p class="card-text">
+                    <font size="4px">
+                          Fundada em Setembro de 2007, a Bokuno Hero Academy desde sua inauguração se preocupa em trazer a saúde e a boa forma aos seus alunos, que contam com todo o suporte de profissionais bem preparados, além de estrutura e aparelhagem completa para o desenvolvimento de diversas práticas esportivas que você pode conferir no menu modalidades.
+                          A academia conta com profissionais qualificados como: nutricionistas, fisioterapeutas e professores de educação física, aptos a atenderem pessoas de todas as idades que queiram praticar atividades físicas, tanto para fins estéticos, terapêuticos ou capacitadores.
+                          A Bokuno Hero Academy dispõe de uma ampla estrutura com equipamentos modernos e adequados a prática de exercícios físicos e desde 2007 traz toda sua bagagem em treinamento e infra-estrutura de alta qualidade, além de mais uma opção para pratica de exercícios.
+                </p></font>
+                <p class="card-text"><small class="text-muted">Bokuno Hero Academy</small></p>
+            </div>
+        </div>
+        <div align="right">
+            <div id="mapa"> </div>
+            <script>
+                function inicializar() {
+                    var coordenadas = { lat: -25.434361, lng: -49.288623 };
+
+                    var mapa = new google.maps.Map(document.getElementById('mapa'), {
+                        zoom: 15,
+                        center: coordenadas
+                    });
+
+                    var marker = new google.maps.Marker({
+                        position: coordenadas,
+                        map: mapa,
+                        title: 'Meu marcador'
+                    });
+                }
+            </script>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAePAf1s8iA7GTY-zdaPnmMZk7gUAl3q3w&callback=inicializar">
+            </script>
+        </div>
+</body>
+</html>
+<style>
+    .card-title {
+    font-weight:bold;
+    font-size: 30px;
+    }
+    </style>

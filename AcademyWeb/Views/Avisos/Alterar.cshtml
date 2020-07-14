@@ -1,0 +1,33 @@
+﻿@model Avisos
+@{
+    ViewData["Title"] = "Alterar";
+}
+    <center>
+        <h2>Alterar Avisos</h2>
+    </center>
+<br /><br />
+    <form asp-action="Alterar" method="post">
+        <fieldset>
+            <legend></legend>
+            <div class="form-group">
+                <label>AvisoId:</label>
+                <input class="form-control"
+                       type="text" readonly=""
+                       asp-for="IdAviso" />
+                <input type="hidden"
+                       asp-for="IdAviso" />
+            </div>
+            <div class="form-group">
+                <label>Tipo de Aviso:</label>
+                <input type="text" class="form-control"
+                       asp-for="Tipo" />
+            </div>
+
+            <div class="form-group">
+                <label>Descrição:</label>
+                <input type="text" class="form-control"
+                       asp-for="Descricao" />
+            </div>
+            <input type="submit" class="btn btn-success" value="Salvar" />
+        </fieldset>
+    </form>

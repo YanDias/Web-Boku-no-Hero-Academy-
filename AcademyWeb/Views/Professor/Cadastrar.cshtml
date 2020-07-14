@@ -1,0 +1,52 @@
+﻿@model Professor
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+<center><h2>Cadastro Professor</h2></center>
+
+<form asp-action="Cadastrar" method="post"
+      enctype="multipart/form-data">
+    <fieldset>
+        <legend>Cadastrar Professor</legend>
+        <div asp-validation-summary="ModelOnly"
+             class="text-primary"></div>
+        <div class="form-group" id="Nome">
+            <label asp-for="Nome"></label>
+            <input type="text" class="form-control"
+                   asp-for="Nome" />
+            <span asp-validation-for="Nome"
+                  class="text-primary"></span>
+        </div>
+        <div class="form-group" id="Cpf">
+            <label asp-for="Cpf"></label>
+            <input type="text" class="form-control"
+                   asp-for="Cpf" />
+            <span asp-validation-for="Cpf"
+                  class="text-primary"></span>
+        </div>
+        <div class="form-group" id="Cpf">
+            <label asp-for="Especialidade"></label>
+            <input type="text" class="form-control"
+                   asp-for="Especialidade" />
+            <span asp-validation-for="Especialidade"
+                  class="text-primary"></span>
+        </div>
+        <div class="form-group" id="Cpf">
+            <label asp-for="Senha"></label>
+            <input type="password" class="form-control"
+                   asp-for="Senha" />
+            <span asp-validation-for="Senha"
+                  class="text-primary"></span>
+        </div>
+
+
+        <div class="form-group" id="Imagem">
+            <label>Imagem:</label><br />
+            <input type="file" name="fupImagem" />
+        </div>
+
+        <input type="submit"
+               class="btn btn-success"
+               value="Cadastrar" />
+    </fieldset>
+</form>

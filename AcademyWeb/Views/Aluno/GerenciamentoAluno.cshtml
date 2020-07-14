@@ -1,0 +1,41 @@
+﻿@model List<Aluno>
+
+@{
+    DateTime dataHora = ViewBag.DataHora;
+}
+
+<h2>Gerenciamento de Alunos</h2>
+<a asp-action="Cadastrar" class="btn btn-info">Cadastrar Aluno</a>
+<table class="table table-hover table-striped"
+       style="margin-top:15px;margin-bottom:15px">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Imagem</th>
+            <th>Criado em</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Aluno item in Model)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.Cpf</td>
+
+                <td>
+                    <img src="~/Academyimagens/@item.Imagem"
+                         alt="@item.Nome"
+                         style="width:150px;height:120px" />
+                </td>
+
+
+                <td>@item.CriadoEm</td>
+               
+            </tr>
+        }
+    </tbody>
+</table>
+<br /><br />
+<a href="https://localhost:44312/Imc/" class="btn btn-success">Avaliação IMC</a>

@@ -1,0 +1,63 @@
+﻿@model Aluno;
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+<center><h2>Visualizar Perfil</h2></center>
+<br />
+<form asp-action="ValidarAluno" method="post"
+      enctype="multipart/form-data">
+    <fieldset>
+        <legend>Editar Perfil</legend>
+
+
+        <div asp-validation-summary="ModelOnly"
+             class="text-primary"></div>
+
+        <div class="form-group" id="Nome">
+            <label asp-for="Nome"></label>
+            <input type="text" class="form-control"
+                   asp-for="Nome" />
+            <span asp-validation-for="Nome"
+                  class="text-primary"></span>
+        </div>
+
+        <div class="form-group" id="Senha">
+            <label asp-for="Senha"></label>
+            <input type="password" class="form-control"
+                   asp-for="Senha" />
+            <span asp-validation-for="Senha"
+                  class="text-primary"></span>
+        </div>
+
+
+        <input type="submit"
+               class="btn btn-success"
+               value="Validar" />
+    </fieldset>
+</form>
+
+
+<div>
+<h2>@Model.Nome</h2>
+
+<table>
+    <tr>
+        <td>
+            <img src="~/Academyimagens/@Model.Imagem" class="rounded"
+                 style="width:300px;height:300px" alt="@Model.Nome" />
+        </td>
+        <td style="vertical-align:top;padding-left:10px">
+            <b>Status: </b>
+            <p>@Model.Sobre</p>
+            <b>Nome: </b> @Model.Nome<br />
+            <br><br />
+            <a asp-action="Alterar"
+               asp-controller="Aluno"
+               asp-route-id="@Model.AlunoId"
+               class="btn btn-success">
+                Alterar
+            </a>
+        </td>
+    </tr>
+</table>
+</div>
